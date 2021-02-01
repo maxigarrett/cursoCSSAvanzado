@@ -1,0 +1,50 @@
+<!-- ANIMACION Y TRANSICION 
+        las animaciones proporcionan una forma de interpolar valores de propiedades CSS cuando cambian como resultado de cambios
+        subyacentes en las propiedades, es decir, caundo el estado inicial y el esatdo final de una propiedad secede en un 
+        periodo de tiempo, lo llamammos animacion o trancicion. Cada uno de los cambios entre el estado inicial y final se 
+        denomina interpolacion por ejemplo si ponemos en estado inicial un background red y estado final un background green
+        todos esos cambios para llegar del red al green si llama interpolacion.
+
+    FASES DEL RENDERIZADO
+        cuando el navegador tinee que animar una propiedad hay siertas fases uqe hay que conocer porque hay muchas animaciones
+        en la web que tiemblan o van laguiados y eso es porque hay que saber q animaciones se pueden usar ycomo usarlas
+        
+        entonces cuando cambiamos una propiedad el navegador tiene que recalcular como dibuja el o los elemento da igual si es
+        cambio de color tamaño,etc tiene q calcualar igual y el navegador tiene que hacer esos calculos para que nosotros 
+        podamos ver el esatdo final de esas propiedades.
+
+        existen tres fases a la hora de ver los elementos en pantalla:
+            1era fase - layaut:Cómo se colocan los elementos en pantalla(consume muchos recursos)
+            2da fase - paint: dibujar o pintar los pixeles de los elementos(tiene un consumo medio)
+            3era fase - composite: componer o dibujar los elementos en pantalla(es el que menos le cuesta al navegador)
+
+    PROPIEDADES ANIABLES
+        no todas las propiedades son animables en CSS.
+        para poder animar una propiedad el navegador tiene que poder calcular estados intermedios, es decir, si nosotros
+        tenemos un ancho de una caja y le decimos que en el estado inicial sean 100px y en el estado final sea 200px, el 
+        navegador puede calcular a lo largo de si le decmios que la animacion dure 1s  que empiece en 100px y termine en 200px
+        y el navegador sabe q tiene 1s para realizar ese cambio e ira añadienedo 101px 102px,etc hasta llegar a 200px
+
+        hay propiedades que no puede calcular por ejemplo las columnas en grid no podemos decirle que en el estado inicial sean
+        3 columnas y es el estado final sean cautro osea si podemos pero no podemos animarlo porque no existe 3.1 columnas o 
+        3.5 columnas el navegador no puede calcular esos estados intermedios 
+
+        todas las propiedades numéricas CON ESTADOS INTERMEDIOS son animables:
+            padding,margin,font-size,color(colores para el navegador no dejan de ser numeros)
+    
+    PAGINA PARA VER LO QUE MAS LE CUESTA AL NAVEGADOR ANIMAR
+        https://csstriggers.com/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">Instantaneo</div>
+    <div class="box animate">Animado</div>
+</body>
+</html>

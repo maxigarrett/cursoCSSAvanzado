@@ -1,0 +1,24 @@
+.box
+{
+    width: 300px;
+    height: 300px;
+    margin: 1rem;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: wheat;
+}
+/* esto no se considera animacion porque cambia de color red a green de una */
+.box:hover
+{
+    background-color: green;
+}
+
+/* esto al navegador le cuesta porque tiene 3s para cambiar de un color a otro y tiene que ir calculando de rojo a verde
+en esos tres segundos y tiene que pasar poer unos esatod intermedios en esta animacion */
+.animate
+{
+    transition: background-color 3s;
+}

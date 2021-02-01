@@ -1,0 +1,45 @@
+/* 
+  Las transformaciones pueden ser de dos tipos, 2D y 3D
+  Para ambas tenemos una sola propiedad que recibe funciones como valor.
+  Transformaciones 2D
+    transform:
+      translate(x | x, y) | translateX() | translateY()
+        valores positivos-> derecha      | abajo
+        valores negativos-> izquierda    | arriba
+      
+      scale(x = y | x,y) | scaleX() | scaleY()
+        skew(x | x,y) | skewX(angle) | skewY(angle) el skew ya casi ni se usa para existe cli path explicado en curso css
+      
+      rotate(angle) -> Tenemos 4 formas de dar ángulos en CSS
+        deg (360deg) -> grados sexagesimales(mas noramles y mas utilizados)
+        grad (400grad)-> es una unidad de medida de ángulos planos
+        rad (6.2832rad)-> es una unidad de ángulo en el plano en el SI
+        turn (1turn) -> turn es el número de vueltas
+      
+      Cuando usamos angulos:
+        valores positivos-> sentido horario
+        valores negativos-> sentido antihorario
+*/
+.box
+{
+    width: 300px;
+    height: 300px;
+    margin: 15% auto;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 3rem;
+    transition: transform 0.5s;
+}
+
+.box:hover
+{
+    background-color: green;
+    color: black;
+    /* transform: translateX(50%); */
+    /* transform: translate(50%,50%); abarca ejeX e Y en el transale va solo no se pone ni X ni Y */
+    /* transform: scale(0); desaprace y 1 es el valor normal de la propiedad*/
+    /* transform: rotate(1turn); gira 1 vuelta entera*/
+}

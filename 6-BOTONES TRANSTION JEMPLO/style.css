@@ -1,0 +1,199 @@
+
+body
+{
+  margin: 0;
+  background-color: #2a363b;
+  font-family: sans-serif;
+}
+.title
+{
+  text-align: center;
+  color: #aaa;
+}
+
+.buttons
+{
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.button
+{
+  display: flex;
+  justify-content: center;
+  width: 150px;
+  color: #ff847c;
+  padding: 0.5rem 1rem;
+  background:none;
+  margin-bottom: 10px;
+  outline: none;
+  cursor: pointer;
+  border: 2px solid #ffd8d5;
+  position: relative;
+
+}
+/* PRIMER BOTON */
+.buttons .button--fill
+{
+  transition: color 1s;
+  overflow: hidden;
+}
+.buttons .button--fill:hover
+{
+  color: #2a363b;
+}
+.buttons .button--fill::before
+{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #ff847c;
+  z-index: -1;/*para que se vea el color del texto*/
+  transform: translateX(-100%);
+  transition: transform .4s;
+}
+.buttons .button--fill:hover::before
+{
+  transform: translateX(0);
+}
+
+
+/* SEGUNDO BOTON */
+.buttons .button--cross
+{
+  transition: color 1s;
+}
+.buttons .button--cross:hover
+{
+  color: #2a363b;
+}
+.buttons .button--cross::before,
+.buttons .button--cross::after
+{
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #ff847c;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: transform 1s;
+}
+.buttons .button--cross::before
+{
+  transform: rotateY(90deg);
+}
+.buttons .button--cross::after
+{
+  transform: rotateX(90deg);
+}
+.buttons .button--cross:hover::before,
+.buttons .button--cross:hover::after
+{
+  transform: rotate(0deg);
+}
+
+/* TERCER BOTON */
+.button--grow
+{
+  
+  transition: box-shadow .5s, letter-spacing .5s;
+}
+
+.button--grow:hover
+{
+  letter-spacing: 5px;
+  box-shadow: 0 0 0 5px #ff847c;
+}
+
+
+
+/* CUARTO BOTON */
+.button--scale-text
+{
+  overflow: hidden;
+  transition: color .5s;
+}
+.button--scale-text:hover
+{
+  color: #2a363b;
+  
+}
+.button--scale-text::before
+{
+  content: attr(data-content);/*con attr y dentro data-content escribimos lo que hay en atributo html*/
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #ff847c;
+  background-color: #2a363b;
+  opacity: 0;
+  transform: scale(5);
+  transition: transform .5s, opacity .5s;
+}
+.button--scale-text:hover::before
+{
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* QUINTO BOTON */
+.button--shiney
+{
+  transition: color .5s;
+  overflow: hidden;
+}
+.button--shiney:hover
+{
+  color: #2a363b;
+}
+.button--shiney::before,
+.button--shiney::after
+{
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  z-index: -1;  
+}
+.button--shiney:hover::before
+{
+  background-color: #7c90ff;
+}
+.button--shiney::after
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 100%;
+  /* left: 15px; */
+  height: 30%;
+  background-color: #fff;
+  transform: rotate(55deg) translateY(750%);
+  transition: transform .3s , background-color .5s ;
+}
+.button--shiney:hover::after
+{
+  transition: transform .3s , background-color .5s ;
+  transform: rotate(45deg) translateY(-900%);
+
+}
